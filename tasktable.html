@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tomato Review Page</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="tasktable.css" >
+<!-- Material CSS-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" href="animate,css">
+</head>
+<body >
+<div ng-app="myapp"  ng-controller="mainctrl" id="main">
+  <div  class="container-fluid" style="width:70%;border:2px dashed white;
+  border-radius: 5px;
+  margin-top: 50px;
+    text-align: center;">
+    
+<label style="margin-top:30px;color:white;font-family:light;font-size:35px;">Welcome to tomato!<br>
+  <br>    
+  <span  style="font-size:15px;color: white">Enter your review</span></label>
+     
+      <form  class="row">
+        <div  class="col-lg-2 ent"> 
+         <input ng-model="namee" type="text" id="namee" style=" color:white;border-bottom-color:white;"placeholder="Name" required>
+        </div>
+        <div  class="col-lg-3 ent">
+          <input ng-model="review" type="text" id="review" style=" color:white;border-bottom-color:white;"placeholder="Review" required>
+        </div>
+        <div  class="col-lg-2 ent">
+          <input ng-model="rating" type="number" id="rating" min="1" max="5" style=" color:white;border-bottom-color:white;"placeholder="Rating(1-5)" required>
+        </div>
+        <div  class="col-lg-2 enta">
+            <button ng-click="submit()"class="btn waves-effect waves-white" type="submit" style="background-color:#b23c3c;">Submit
+                <i class="material-icons right">send</i>
+              </button>
+        </div>
+        <div class="col-lg-2 enta">
+            <button ng-click="cancel()"class="btn waves-effect waves-white" style="background-color:#b23c3c;">Cancel
+                <i class="material-icons right">cancel</i>
+              </button>
+        </div>
+      </form>
+      <label ng-init="txt='Hey!...There is not data...Enter something to show below  :)'" style="margin-top:10px;color:white;font-family:light;font-size:25px;padding-bottom:10px;">{{txt}}</label>
+      <div class="table-responsive">
+        <table ng-init="tableshw=false" ng-show="tableshw"  class="table table-striped table-hover" style="background-color: white;">
+          <tr>
+            <th class="">Name</th>
+            <th class="">Review</th>
+            <th class="">Rating</th>
+            
+          </tr>
+
+          <tr id="{{ 'object-' + $index }}" ng-repeat="x in arry"   ng-mouseover="hoverIn($index)" ng-mouseleave="hoverOut($index)">
+              <td>{{x.name}}</td>
+              <td>{{x.review}}</td>
+              <td>{{x.rating}}</td>   
+              <td>
+                <button ng-click="edit($index)"  ng-show="this['shw-'+$index]" class="btn waves-effect waves-white btn-small" style="background-color:#b23c3c;">Edit
+                  <i class="material-icons right">edit</i>
+                </button></td>
+              <td>
+                  <button ng-click="delete($index)" ng-show="this['shw-'+$index]" class="btn waves-effect waves-white btn-small" style="background-color:#b23c3c;">Delete
+                      <i class="material-icons right">cancel</i>
+                    </button>
+              </td>
+            </tr>
+        
+
+        </table>  
+  
+      </div>
+  </div><!-- container-->
+</div><!-- main-->
+       
+<!-- bootstrap-->    
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- material css-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="app.js"></script>  
+
+</body>
+</html>

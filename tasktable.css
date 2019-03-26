@@ -1,0 +1,41 @@
+#main{
+     
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body
+{
+  /*https://j.gifs.com/KeLbkp.gif
+  https://media.giphy.com/media/l3vRjYearYzgNb7e8/giphy.gif
+  http://www.brandgradients.com/img/backgrounds/red-gradient-background.png
+  */
+  background: url('https://j.gifs.com/KeLbkp.gif') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+@font-face {
+  font-family: light;
+  src: url("Roboto-Light.ttf");
+}
+@font-face {
+  font-family: bol;
+  src: url("Roboto-Bold.ttf");
+}
+@font-face {
+  font-family: reg;
+  src: url("Roboto-Regular.ttf");
+}
+*{
+  font-family: reg;
+}
+.ent{
+  margin-top:5px;
+  margin-left:10px;
+}
+.enta{
+  margin-top:10px;
+  margin-left:10px;
+}
